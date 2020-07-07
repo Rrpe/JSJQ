@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <!-- Position이 들어가면 content(내용) 기준으로 크기가 자동으로 바뀜 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+            /* margin: 10px;
+            padding: 10px; */
+        }
+
+        .box1 {
+            /* margin: 0 auto; */
+            position: fixed;
+            top: 200px;
+
+            left: 50%;  
+            /* margin-left: -105px; */
+            /* transform: translateX(-50%); */
+
+
+            top: 50%;
+            /* transform: translateY(-50%); */
+            transform: translate(-50%, -50%);
+
+            border: 5px solid yellowgreen;
+        }
+
+        /* relative */
+        .box2 {
+            /* 자기 구역(공간)이 사라지지 않음 */
+            /* 좌표 기준점이 자신의 위치가 기준점 */
+            /* 자손의 기준점 */
+            position: relative;
+            top: 20px;
+            left: 20%;
+
+            border-color: red;
+        }
+        .box2 > div {
+            border: 1px solid black;
+            margin: 5px;
+        }
+        .box2 .box201 {
+            /* 부모(상위요소)가 좌표기준점 */
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .box2 .box202 {
+            
+        }
+        .box2 .box203 {
+            width: 100px;
+
+            /* static 에서 수평 중앙 정렬 */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* fixed */
+        .box3 {
+            /* 브라우저(창)가 좌표의 기준점 */
+            /* 공간(자기 구역) 자체가 사라지고 새 레이어 위에 올림(3d로 보면 위에 종이한장이 더있는걸로 보임) / 화면에 위치 고정 */
+            position: fixed;
+            
+            /* position에서 fixed, absolute 설정시 중앙정렬 */
+
+            /* left: 50%;  margin-left: -105px; */
+
+            left: 50%;  
+            /* 자신의 가로폭을 기준으로 좌우 이동 */
+            transform: translateX(-50%);
+            
+            /* top: 0;
+            left: 0; */
+
+            border: 5px solid green;
+        }
+
+        /* absolute */
+        .box4 {
+            /* 부모(상위요소)가 position설정이 없을 경우에는 body가 좌표의 기준점 */
+            /* 공간(자기 구역) 자체가 사라지고 새 레이어 위에 올림(3d로 보면 위에 종이한장이 더있는걸로 보임) / 화면에 위치 고정 되지 않음 */
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            border: 5px solid blue;
+        }
+
+        .box5 {
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- .box.box$*5{box-$} -->
+    <div class="box box1">box-1</div>
+    <div class="box box2">box-2 relative
+        <!-- .box20${box2-$}*3 -->
+        <div class="box201">box2-1</div>
+        <div class="box202">box2-2</div>
+        <div class="box203">box2-3</div>
+    </div>
+    <div class="box box3">box-3 fixed</div>
+    <div class="box box4">box-4 absolute</div>
+    <div class="box box5">box-5</div>
+</body>
+</html>
