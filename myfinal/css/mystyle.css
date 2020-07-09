@@ -1,0 +1,390 @@
+@charset "UTF-8";
+/* less, sass */
+@import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Play:wght@400;700&display=swap');
+
+/* 스타일 초기화 작업 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    color: #bbbbbb;
+}
+
+img {
+    border: 0;
+}
+
+body { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #333;
+}
+
+/* 
+position
+    fixed : 브라우저(창) 기준점
+    absolute : 상위요소 또는 문서(body) 기준점
+    relative : 현재 자신의 요소를 기준점
+    static : 기본값, block(행단위), inline(열)
+*/
+
+/* 비디오 스타일 */
+.vid {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: -50px;
+    left: 0px;
+    opacity: 0.9;
+
+    border: 0px solid red;
+    /* box-sizing: border-box; */
+}
+
+.vid video {
+    width: 100%;
+    min-width: 1600px;
+}
+/* 비디오 스타일 */
+
+
+/* 심볼 이미지 레이아웃 */
+h1 {
+    z-index: 100;
+    position: fixed;
+    top: 40px;
+    left: 40px;
+
+    border: 0px solid red;
+}
+
+h1 img {
+    width: 280px;
+    height: auto;
+}
+/* 심볼 이미지 레이아웃 */
+
+
+/* 헤드 영역 레이아웃 */
+header {
+    position: fixed;
+    z-index: 50;
+    top: 0;         left: 0;
+    width: 700px;   height: 100%;
+
+    transform: skewX(-40deg) translateX(-420px);
+    /* skew - 기울이기 */
+
+    /* background-color: rgb(127, 255, 0); */
+
+    /* https://www.colorzilla.com/gradient-editor/ */
+    background: linear-gradient(to right, #7fff00 0%, #c3ff00 100%);
+}
+
+#gnb {
+    position: absolute; /* 부모 기준 */
+    top: 150px; right: 0px;
+
+    border: 0px solid red;
+}
+
+#gnb li {
+    /* 좌표 기준점이 자기 자신, 자식태그의 기준점 */
+    position: relative;
+}
+
+#gnb > li > a {
+    display: block;     /* inline(default)는 width, height값 적용불가 */
+    width: 220px; height: 50px; 
+    font: bold 18px/2.7 play;       /* font: 굵기 폰트사이즈/폰트높이 글꼴; */
+
+    /* font-family: 'NanumSquareRound',sans-serif; 
+    font-family: 'Oxygen', sans-serif; 
+    'MuseoModerno', cursive;  */
+    color: #1d1d1f;
+    text-align: right;
+    padding-right: 40px;
+
+
+    /* 텍스트를 수직 중앙 보낼때 height 높이와 line-height 높이를 똑같이 주면 됨 */
+    /* height: 50px; line-height: 50px */
+}
+
+#gnb > li.on > a {
+    background-color: #1d1d1f;
+    color: #f5f5f5;
+}
+
+/* hover 등 효과를 줄때는 자기자신과 자식 태그(클래스)만 가능 */
+#gnb > li:hover > a {
+    background-color: #1d1d1f;
+    color: #f5f5f5;
+}
+
+/* block 속성일 경우 적용되는 스타일 : width, height, transform */
+#gnb em {
+    display: inline-block;
+    transform: skewX(40deg)!important;
+}
+
+#gnb i {
+    margin-right: 20px;
+}
+
+/* 2depth; lnb */
+
+#gnb > li > ul {
+    /* 상위 요소를 기준으로 좌표 계산
+    #gnb li : position: relative */
+    position: absolute;
+    top: 0; left: 0; opacity: 0;
+
+    transition: all 0.5s;
+}
+
+#gnb > .on > ul {
+    left: 200px;
+    top: -15px;
+    opacity: 0.7;
+}
+
+#gnb > li:hover ul {
+    opacity: 0.7;
+    left: 200px;
+}
+
+#gnb ul a {
+    display: block;
+    width: 150px; height: 40px;
+    font: bold 16px/2.5 arial;
+    text-align: center;
+    background-color: #1d1d1f;
+    color: #f5f5f5;
+    border-bottom: 2px solid #7fff00;
+    margin-bottom: 3px;
+    
+    box-sizing: border-box;
+    transition: all 0.4s;
+}
+
+#gnb ul a:hover {
+    background-color: #7fff00;
+    color: #1d1d1f;
+}
+/* 헤드 영역 레이아웃 */
+
+
+/* sns 스타일 */
+.sns {
+    position: fixed;
+    z-index: 100;
+    top: 60px; right: 50px;
+}
+
+.sns li {
+    float: left;  /* 최신 float가 아닌 flex를 사용함 */
+    margin-right: 30px;
+}
+
+.sns .icon {
+    color: #7fff00;
+    font-size: 24px;
+    opacity: 0.5;
+
+    transform: scale(1);
+
+    transition: all 0.5s;   
+    /* all은 속성 이름(opacity를 할시 opacity 적용되있는 태그만 적용 */
+    /* 출발시작 태그에 사용 */
+}
+
+.sns .icon:hover {
+    opacity: 1;
+    transform: scale(1.5);
+    /* 아이콘, Text등 hover등으로 이펙트 효과 사용 시 font-size가 아닌 transform: scale(x)로 사용 */
+}
+
+.sns::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* sns 스타일 */
+
+
+/* 텍스트 박스 스타일 */
+.txtBox {
+    position: fixed;
+    z-index: 100;
+    top: 200px; right: 70px;
+    width: 380px; height: 280px;
+    color: #f5f5f5;
+
+    border: 0px solid red;
+}
+
+.txtBox .txt1 {
+    position: absolute;
+    top: 200px; right: 0;
+    font-size: 34px;
+    font-family: play;
+    color: #bbb;
+    letter-spacing: -1px; /* 반응형 할 때는 em */
+}
+
+.txtBox .txt1 b{
+    color: #7fff00;
+    font: bold 34px arial;
+    /* font-weight: bold; */
+    margin-left: 10px;
+}
+
+.txtBox .txt2 {
+    position: absolute;
+    top: 0; right: 0;
+    font-size: 160px;
+    font-family: 'Monoton', cursive;
+    color: #7fff00;
+}
+
+.txtBox .txt2 em{
+    color: #f5f5f5;
+    font: 200 50px play;
+    font-style: italic;
+    margin-left: 10px;
+}
+/* 텍스트 박스 */
+
+
+/* 이미지 콘텐츠 박스 스타일 */
+.side {
+    position: fixed;
+    z-index: 100;
+    bottom: 0; right: -800px;
+    width: 800px; height: 100%;
+    background-color: #111111; opacity: 0.5;
+
+    transform: skewX(-40deg);
+    transition: all 0.5s;
+
+    border: 0px solid red;
+}
+
+.side:hover {
+    right: -500px;
+    opacity: 0.8;
+}
+
+.side .con {
+    position: absolute;
+    bottom: 0; left: 300px;
+    width: 400px; height: 100%;
+    background-color: #000000;
+
+    transition: all 0.7s;
+
+    border: 0px solid blue;
+}   
+
+.side:hover .con {
+    left: 50px;
+}
+
+/* 공통된 요소는 일괄적으로 스타일 적용 */
+.side .con p {
+    position: absolute;
+    left: 50px;
+}
+
+.side .con p em {
+    display: inline-block;
+    font: bold 16px/1.7 arial;
+    color: #a0bd50;
+    opacity: 1;
+    transform: skewX(40deg);
+}
+
+.side .con p img {
+    width: 300px; height: 70px;
+    opacity: 0.3;
+}
+
+.side .con p img:hover {
+    opacity: 1;
+}
+
+/* 개별 스타일 */
+.side .con p:nth-child(1) {
+    bottom: 270px;
+}
+
+.side .con p:nth-child(2) {
+    bottom: 160px;
+}
+
+.side .con p:nth-child(3) {
+    bottom: 50px;
+}
+
+/* 화살표 롤링 버튼 스타일 */
+.side .btnContents {
+    position: absolute;
+    bottom: 40px; left: 250px;
+    color: #b9fb05;
+    transform: skew(40deg);
+
+    /* border: 1px solid red; */
+}
+
+.side .btnContents i {
+    position: absolute;
+    bottom: 0; right: 0;
+    font-size: 60px;
+    opacity: 1;
+}
+
+.side .btnContents i:nth-child(1) {
+    animation: ani linear 1.5s 0s infinite;
+} 
+
+.side .btnContents i:nth-child(2) {
+    animation: ani linear 1.5s 0.5s infinite;
+} 
+
+.side .btnContents i:nth-child(3) {
+    animation: ani linear 1.5s 1s infinite;
+} 
+
+.side:hover .btnContents {
+    display: none;
+}
+
+/* 애니메이션 구현 설계 */
+@keyframes ani {
+    0% {
+        right: 0;
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        right: 100px;
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}

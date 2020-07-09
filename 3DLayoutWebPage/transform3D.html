@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Test</title>
+    <style>
+        body {
+            width: 200px;
+            margin: 200px auto;
+        }
+
+        section {
+            position: relative;
+            width: 200px; height: 200px;
+
+            /* 6면을 감싸고 있는 요소를 회전 */
+            animation: rint linear 10s 0s infinite;
+
+            /* 3D View 
+                자손의 3차원 속성을 유지한체로 부모를 회전하고자 할 경우: 후손의 3차원 유지*/
+            transform-style: preserve-3d;
+
+            /* 원근감 */
+            perspective: 1000px;
+        }
+
+        /* 회전하는 애니메이션 구현 설계 */
+        @keyframes rint {
+            from /* 0% */{
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            }
+
+            to /* 100% */{
+                transform: rotateX(360deg) rotateY(360deg) rotateZ(0deg);
+            }
+        }
+
+        section > div {
+            width: 200px; height: 200px;
+            position: absolute;
+            opacity: 0.3;
+            
+            backface-visibility: hidden; /* 3D 사용시 opacity사용 시 뒤에나오는 화면 숨김 */
+            
+        }
+
+        /* 옆면 */
+        div:nth-child(1) {
+            transform: rotateY(0deg) translate3d(0px, 0px, 100px);
+            background-color: red;
+            
+        }
+        div:nth-child(2) {
+            transform: rotateY(90deg) translate3d(0px, 0px, 100px);
+            background-color: orange;
+        }
+        div:nth-child(3) {
+            transform: rotateY(180deg) translate3d(0px, 0px, 100px);
+            background-color: yellow;
+        }
+        div:nth-child(4) {
+            transform: rotateY(270deg) translate3d(0px, 0px, 100px);
+            background-color: green;
+        }
+
+        /* 윗면 아랫면 */
+        div:nth-child(5) {
+            transform: rotateX(90deg) translate3d(0px, 0px, 100px);
+            background-color: blue;
+        }
+        div:nth-child(6) {
+            transform: rotateX(270deg) translate3d(0px, 0px, 100px);
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</body>
+</html>

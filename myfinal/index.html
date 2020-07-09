@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나이키 샘플 페이지 학습하기</title>
+
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/mystyle.css">
+</head>
+
+<body>
+    <!-- 비디오 -->
+    <figure class="vid">
+        <video loop="loop" autoplay="autoplay">
+            <source src="./img/nike.mp4" type="video/mp4">
+        </video>
+    </figure>
+
+    <!-- 심볼 이미지 -->
+    <h1><img src="./img/logo2.png" alt="">
+        <!-- <img src="./img/pan_tool-black-18dp.svg" alt=""> -->
+    </h1>
+
+    <!-- .box.box$*5{box-$} -->
+    <!-- 헤드 영역 (메뉴 항목 나열) -->
+    <header>
+        <ul id="gnb">
+            <!-- ul태그는 header css에 적용된 스타일을 따라감 -->
+            <li class="on">
+                <a href="#">
+                    <em>
+                        <i class="fa fa-refresh fa-spin fa-1x fa-fw"></i>
+                        About NIKE
+                    </em>
+                </a>
+                <ul>
+                    <!-- ul>li*3>a[href="#"] -->
+                    <li><a href="#"><em>English</em></a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><em>Brand Info</em></a>
+                <ul>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><em>Community</em></a>
+                <ul>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><em>Product Value</em></a>
+                <ul>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                </ul>
+
+            </li>
+            <li>
+                <a href="#"><em>Company History</em></a>
+                <ul>
+                    <li><a href="#"><em>sub</em></a></li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+
+    <!-- sns 웹폰트 아이콘 -->
+    <ul class="sns">
+        <li><a href="#"><i class="fa fa-facebook icon" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter icon" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-youtube icon" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-google-plus icon" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-android icon" aria-hidden="true"></i></a></li>
+    </ul>
+
+    <!-- 텍스트 박스 -->
+    <section class="txtBox">
+        <p class="txt1">Best Qualified <b>AIR MAX</b></p>
+        <p class="txt2">50<em>/ 24</em></p>
+    </section>
+
+    <!-- 이미지 콘텐츠 박스 -->
+    <section class="side">
+        <div class="con">
+            <!-- p*3>em+a[href="#"]>img[src="./img/pic$.png"] -->
+            <p>
+                <em>Event & Community</em>
+                <a href="#"><img src="./img/pic1.png" alt=""></a>
+            </p>
+            <p>
+                <em>News & Notice</em>
+                <a href="#"><img src="./img/pic2.png" alt=""></a>
+            </p>
+            <p>
+                <em>Product Review</em>
+                <a href="#"><img src="./img/pic3.png" alt=""></a>
+            </p>
+        </div>
+
+        <!-- 화살표 롤링 버튼 -->
+        <div class="btnContents">
+            <i class="fa fa-angle-double-left"></i>
+            <i class="fa fa-angle-double-left"></i>
+            <i class="fa fa-angle-double-left"></i>
+        </div>
+    </section>
+</body>
+
+</html>
