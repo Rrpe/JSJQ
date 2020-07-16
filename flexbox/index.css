@@ -1,0 +1,210 @@
+@charset "UTF-8";
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+hr {
+    margin: 0 10px;
+    /* color: blue; */
+    border: 5px solid #555555;
+    opacity: 0.5;
+}
+
+/* .box {
+    width: 500px;
+    height: 180px;
+
+    display: flex;
+
+    세로 정렬
+    flex-direction: column;
+    flex-direction: column-reverse;
+
+    가로 정렬
+    flex-direction: row;
+    flex-direction: row-reverse;
+
+    overflow: hidden;
+
+    border: 1px solid red;
+} */
+
+.item {
+    width: 100px;
+    /* height: 100px; */
+    /* margin: 10px; */
+
+    /* 사이즈 1 로 주고 남는 값 auto(자동)으로 나눔 */
+    /* flex: 1 1 auto; */
+    /* flex: auto; */
+
+    /* flex: 1 1 0; */
+    flex: 1;
+
+    border: 1px solid blue;
+}
+
+.itemA {
+    /* 비율 가로폭 설정 */
+    /* flex: 1 1 auto; */
+    flex: 1;
+
+    /* 고정폭 설정 */
+    /* flex: 0 0 150px; */
+    /* flex: 0 0 50%; */
+}
+
+.itemB {
+    /* flex: 2 1 auto; */
+    flex: 3;
+
+    /* 고정폭 설정 */
+    /* flex: 0 0 300px;
+    flex: 0 0 20%; */
+}
+
+.itemC {
+    /* flex: 1 1 auto; */
+    flex: 1;
+
+    /* 고정폭 설정 */
+    /* flex: 0 0 100px;
+    flex: 0 0 10%; */
+}
+
+.align_box {
+    /* background-color: lightgreen; */
+    width: 300px;
+    height: 500px;
+    margin: 10px;
+
+    overflow: hidden;
+
+    border: 1px solid green;
+}
+
+.align_box > div {
+    width: 100px; /* 안먹음 */
+    height: 50px;
+    margin: 5px;
+    background-color:lightblue;
+    border: 0;
+}
+
+.a01 {
+    /* flex-box안에 있는 요소를 flex-item 이라함 */
+
+    /* display: flex, inline-flex */
+    display: flex;
+
+    /*  방향 조절 */
+    flex-direction: row; /* 기본값 */
+    /* flex-direction: row-reverse;
+    flex-direction: column;
+    flex-direction: column-reverse; */
+    
+    /* flex-direction
+        row시 : width 사용 불가
+        column시 : height 사용 불가
+    */
+
+
+
+    /* 생략시 기본값: nowrap 무조건 한줄로 나열 */
+    flex-wrap: nowrap;
+
+    /* 플렉스 아이템을 플렉스 범위 내에 여러 줄로 표시 */
+    /* flex-wrap: wrap;
+    flex-wrap: wrap-reverse; */
+
+    flex-flow: row wrap;
+
+    /* align-content: space-between;
+    align-content: space-around; */
+}
+
+.a01 > .box {
+    flex: 0 0 100px;
+}
+
+.a02 {
+    display: flex;
+    width: 800px;
+    
+    /* 수평 배치 */
+    justify-content: flex-start; /* 기본값  */
+    justify-content: flex-end;
+    justify-content: center;
+
+    /* 모든 빈공간 margin 값 간격을 같음 */
+    justify-content: space-evenly; 
+
+    /* 양끝 잡고 margin 일정 간격 */
+    justify-content: space-between; 
+
+    /* 남은 공간을 플렉스-아이템-양옆의 margin을 같게 만듬 */
+    justify-content: space-around;
+}
+
+.a02 > .box {
+    flex: 0 0 100px;
+}
+
+.a03 {
+    display: flex;
+    width: 800px;
+    height: 300px;
+    
+    /* 수직 배치 */
+    align-items: flex-start; /* 기본값 */
+    align-items: flex-end;
+    align-items: center;
+
+    align-content: space-between;
+    align-content: space-around;
+}
+
+.a03 > .box {
+    flex: 0 0 100px;
+}
+
+.a04 {
+    display: flex;
+    width: 800px;
+    /* height: 500px; */
+    
+    justify-content: center;
+    /* align-items: center; */
+
+}
+
+.a04 > .box:nth-child(1) {
+    align-self: flex-end;
+}
+
+.a04 > .box:nth-child(2) {
+    align-self: center;
+}
+
+.a04 > .box:nth-child(3) {
+    align-self: center;
+}
+
+.a04 > .box:nth-child(4) {
+    align-self: flex-end;
+}
+
+.a04 > .box:nth-child(5) {
+    align-self: flex-start;
+}
+
+.a05 {
+    display: flex;
+    width: 500px;
+    height: 500px;
+
+    justify-content: center;
+    align-items: center;
+}

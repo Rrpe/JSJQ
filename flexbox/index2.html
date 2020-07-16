@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .align_box {
+            /* width: 100%; */
+            width: 400px;
+            height: 500px;
+            /* height: 100vh; */
+
+            background-color: lightpink;
+
+            display: flex;
+            /* flex-direction: row; */
+            /* flex-direction: row-reverse; */
+            /* flex-direction: column; */
+            /* flex-direction: column-reverse; */
+
+            /* Flex-Item 한줄로 나열 */
+            /* flex-wrap: nowrap; */
+
+            /* 크기를 벗어나면 다음줄에 나열 */
+            /* flex-wrap: wrap; */
+
+            /* flex-direction, flex-wrap 동시 사용 */
+            flex-flow: row wrap;
+
+            /* 부모가로폭-하위요소전체폭 값을 비율로 분배 */
+            flex: 1 1 auto;
+            /* flex: auto */
+
+            /* 부모요소 전체의 가로폭을 비율로 분배 */
+            flex: 1 1 0;
+            /* flex: 1 */
+
+            /* 수평 정렬 */
+            /* justify-content: center; */
+            justify-content: flex-start;
+            /* justify-content: flex-end; */
+
+            /* justify-content: space-evenly; */
+            /* justify-content: space-around; */
+            /* justify-content: space-between; */
+
+            /* 수직 정렬 */
+            align-items: flex-start;
+            /* align-items: flex-end; */
+            /* align-items: center; */
+
+            /* 수직 정렬 : align-content : 줄간의 사이여백 분배 */
+            align-content: space-between;
+            align-content: space-around;
+        }
+
+        .box {
+            /* width: 100px; */
+            height: 50px;
+
+            flex: 0 0 150px;
+
+            border: 1px solid red;
+        }
+
+        /* .box1 {
+            margin-right: 100px;
+            margin-bottom: 100px;
+            position: relative;
+            bottom: 50px;
+            right: 50px;
+        } */
+
+        /* .box1 {
+            flex: 1;   
+            flex: 0 0 200px;
+
+        }
+        
+        .box2 {
+            flex: 1;   
+            flex: 0 0 200px;
+
+        }
+        
+        .box3 {
+            flex: 1;   
+            flex: 0 0 200px;
+
+        }
+        
+        .box4 {
+            flex: 1;   
+            flex: 0 0 200px;
+
+        }
+        
+        .box5 {
+            flex: 1;   
+            flex: 0 0 200px;
+
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="align_box a01">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+    </div>
+</body>
+
+</html>

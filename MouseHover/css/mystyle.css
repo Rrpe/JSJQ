@@ -87,14 +87,14 @@ img {
     overflow: hidden;
     background: url(../img/divider.png) no-repeat left center;
 
-    transition: all 0.8s;
+    /* transition: all 0.8s; */
 
     /* border-left: 1px solid #666666; */
 }
 
-.contents article:hover {
+/* .contents article:hover {
     width: 35%;
-}
+} */
 
 .contents article:hover h2 {
     color: #f5f5f5;
@@ -127,7 +127,7 @@ img {
     background-color: #000000;
     opacity: 0.5;
 
-    transition: all 0.5s;
+    /* transition: all 0.5s; */
 }
 
 /* video style */
@@ -138,47 +138,47 @@ img {
     margin-left: -100px;
     opacity: 0;
 
-    transition: all 0.8s;
+    /* transition: all 0.8s; */
 }
 
-.contents article:hover video {
+/* .contents article:hover video {
     opacity: 1;
-}
+} */
 
 /* hide article text */
 .contents article h3 {
     position: absolute;
     z-index: 3;
-    bottom: 210px; right: -20px;
+    bottom: 210px; right: -310px;
 
     font: 400 40px 'Raleway';
-    opacity: 0;
+    opacity: 1;
     color: #f5f5f5;
     text-align: right;
 
     transition: all 0.3s;
 }
 
-.contents article:hover h3 {
+/* .contents article:hover h3 {
     right: 10px;
     opacity: 1;
-}
+} */
 
 .contents article p {
     position: absolute;
     z-index: 3;
-    bottom: 50px; right: -230px;
+    bottom: 50px; right: -310px;
     width: 300px; height: 150px;
 
     font: 400 12px/1.5 'Raleway';
-    opacity: 0;
+    opacity: 1;
     color: #f5f5f5;
     text-align: right;    
     
     transition: all 2.4s;
 }
 
-.contents article:hover p {
+/* .contents article:hover p {
     right: 10px;
     opacity: 1;
-}
+} */

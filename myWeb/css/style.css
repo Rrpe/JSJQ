@@ -1,0 +1,512 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* 기본 설정값 정의 : 스타일 시트에서 사용하는 전역변수개념 */
+:root {
+    --main-color: #5d9ab2;
+    --accent-color: #bf6a7a;
+    --dark-main-color: #2b5566;
+    --text-biright-color: #ffffff;
+
+    --icon-color: #FFF;
+    --icon-bg-color: #DDD;
+
+    --large-width: 1000px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    outline: 0;
+    text-decoration: none;
+    color: #333;
+}
+
+img {
+    border: 0;
+}
+
+body {
+    font-family: '맑은 고딕', 'Apple SD Gothic Neo', sans-serif;
+}
+
+/* 콘텐츠A : 큰이미지 */
+.conA {
+    /* width: 100%; */
+    height: 100vh;
+    min-height: 450px;
+
+    background-color: lightcyan;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(../img/fruits.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    color: #FFFFFF;
+    color: var(--text-biright-color);
+
+    text-align: center;
+
+    
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+
+}
+
+.conA h1 {
+    font-size: 18px;
+    font-size: 15vw;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    
+    /* 폰트 크기에 대한 비율: 320px해상도 48px 폰트크기 자간 10px */
+    letter-spacing: 0.2em;
+    margin-left: 0.2em;
+
+    color: #FFF;
+}
+
+.conA p {
+    font-size: 18px;
+    font-size: 5.625vw;
+    color: #F5F5F5;
+}
+
+.conA img {
+    width: 20%;
+    height: auto;
+}
+
+.conA a {
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 20px;
+
+    font-size: 14px;
+
+    /* currentColor: 폰트 색과 동일 */
+    background-color: var(--accent-color);
+    color: #FFF;
+    color: var(--text-biright-color);
+    border: 3px solid currentColor;
+    border-radius: 5px;
+
+    transition: all 0.3s;
+}
+
+.conA a:hover {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+}
+
+/* 조건: pc해상도 768px 이상 */
+@media screen and (min-width: 768px) {
+    .conA h1 {
+        font-size: 115px;
+    }
+
+    .conA p {
+        font-size: 24px;
+    }
+}
+
+/* 콘텐츠B : 정보 */
+
+.conB .container {
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 80px;
+    padding-bottom: 20px;
+}
+
+.conB .container h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.conB .container p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+.conB .text {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+.conB .text a {
+    color: #5d9ab2;
+    color: var(--main-color);
+}
+
+.conB .text a:hover {
+    text-decoration: underline;
+}
+
+.conB .text a i {
+    font-size: 18px;
+}
+
+.conB .icon {
+    display: inline-block;
+    width: 2em;
+    
+    font-size: 40px;
+    text-align: center;
+    line-height: 2em;
+
+    color: #FFFFFF;
+    color: var(--icon-color);
+    background-color: #DDDDDD;
+    background-color: var(--icon-bg-color);
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .conB .container {
+        /* width: 1000px; */
+        max-width: 1000px;
+        max-width: var(--large-width);
+        
+        margin: 0 auto;
+        display: flex;
+        
+        /* justify-content: center; */
+    }
+    .conB .text {
+        /* 
+        flex: 1 1 auto;
+        flex: auto;
+        */
+        /* flex: 1 1 0; */
+        flex: 1;
+        /* flex: 0 0 333px; */
+    }
+}
+
+/* 콘텐츠C : 이미지+텍스트 */
+.conC {
+    /* height: 400px; */
+    background-color: var(--main-color);
+    color: var(--text-biright-color);
+
+}
+
+.conC .photo {
+    min-height: 200px;
+
+    background-image: url(../img/note.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.conC .container h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.conC .container p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+.conC .text {
+    padding: 20px;
+    padding: 1.25em;
+    text-align: left;
+}
+
+.conC a {
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 20px;
+
+    font-size: 14px;
+
+    /* currentColor: 폰트 색과 동일 */
+    background-color: var(--accent-color);
+    color: #FFF;
+    color: var(--text-biright-color);
+    border: 3px solid currentColor;
+    border-radius: 5px;
+
+    transition: all 0.3s;
+}
+
+
+.conC .text a i {
+    font-size: 18px;
+}
+
+.conC .icon {
+    display: inline-block;
+    width: 2em;
+    
+    font-size: 40px;
+    text-align: center;
+    line-height: 2em;
+
+    color: #FFFFFF;
+    color: var(--icon-color);
+    background-color: #DDDDDD;
+    background-color: var(--icon-bg-color);
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .conC .container {
+        display: flex;
+
+        /* justify-content: space-between;
+        justify-content: space-around;
+        justify-content: space-evenly; */
+
+        margin: 0 auto;
+
+        max-width: 1000px;
+        max-width: var(--large-width);
+    }
+
+    .conC .photo {
+        flex: 1.5;
+    }
+
+    .conC .text {
+        padding: 50px;
+        flex: 1;
+    }
+}
+
+/* 콘텐츠D : 이미지+텍스트 */
+.conD .container {
+    padding-top: 2px;
+}
+
+.conD {
+    /* height: 400px; */
+    background-color: var(--text-biright-color);
+    color: #000000;
+
+}
+
+.conD .photo {
+    min-height: 200px;
+
+    background-image: url(../img/life.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.conD .container h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.conD .container p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+.conD .text {
+    padding: 20px;
+    padding: 1.25em;
+    text-align: left;
+}
+
+.conD a {
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 20px;
+
+    font-size: 14px;
+
+    /* currentColor: 폰트 색과 동일 */
+    background-color: var(--accent-color);
+    color: #FFF;
+    color: var(--text-biright-color);
+    border: 3px solid currentColor;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px #888;
+
+    transition: all 0.3s;
+}
+
+
+.conD .text a i {
+    font-size: 18px;
+}
+
+.conD .icon {
+    display: inline-block;
+    width: 2em;
+    
+    font-size: 40px;
+    text-align: center;
+    line-height: 2em;
+
+    color: #FFFFFF;
+    color: var(--icon-color);
+    background-color: #DDDDDD;
+    background-color: var(--icon-bg-color);
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .conD .container {
+        display: flex;
+
+        flex-direction: row-reverse;
+        /* justify-content: space-between;
+        justify-content: space-around;
+        justify-content: space-evenly; */
+
+        padding: 40px 0;
+        margin: 0 auto;
+
+        max-width: 1000px;
+        max-width: var(--large-width);
+    }
+
+    .conD .photo {
+        flex: 0 0 400px;
+    }
+
+    .conD .text {
+        padding: 50px;
+        flex: 1;
+    }
+}
+
+
+/* 푸터 */
+.footer {
+    background-color: var(--dark-main-color);
+    color: var(--text-biright-color);
+}
+
+.footer .container {
+    padding: 40px 20px;
+
+}
+
+.footA {
+    margin-bottom: 30px;
+}
+
+.footA h2 {
+    margin-bottom: 10px;
+    font-size: 30px;
+
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.2em;
+}
+
+.footA p {
+    font-size: 14px;
+}
+
+/* 부모요소 속성을 상속받음 */
+.footA a {
+    color: inherit
+}
+
+.footB > .nav {
+    margin-bottom: 20px;
+}
+
+.footB h3 {
+    font-size: 14px;
+
+    margin-bottom: 10px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid currentColor;
+}
+
+.footB ul li a {
+    display: block;
+
+    color: inherit;
+    font-size: 12px;
+
+    padding: 5px;
+}
+
+.footB ul a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.footC p {
+    font-family: Montserrat, sans-serif;
+    font-size: 12px;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+
+    .footB {
+        display: flex;
+
+        /* justify-content: space-evenly; */
+    }
+
+    .footB > .nav{
+        flex: 1;
+        /* flex: 0 0 200px; */
+    }
+
+    .footB > .nav:not(:first-child) {
+        margin-left: 40px;
+    }
+
+    .footer .container {
+        max-width: var(--large-width);
+        display: flex;
+
+        flex-wrap: wrap;
+
+        margin: 0 auto;
+    }
+
+    .footA {
+        flex: 0 0 40%;
+    }
+    
+    .footB {
+        flex: 0 0 60%;
+    }
+    
+    .footC {
+        flex: 0 0 100%;
+    }
+}
+
+/* 
+    밀도 단위 계산 : vw, vh, ...
+    vw : 화면의 너비를 100vw로 하는 단위
+    1vw : 화면의 100분의 1
+    ex) 320px일 때 폰트 크기를 48px = 15vw 로 설정
+*/

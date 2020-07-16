@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 웹 페이지: 미디어쿼리</title>
+    <!-- 1. 형식 
+    media="screen" : 사람이 보는 화면에만 적용
+    media="print" : 인쇄할때 인쇄물에 적용
+    <link rel="stylesheet" href="./desktop.css" media="screen">
+    <link rel="stylesheet" href="./print.css" media="print">
+    -->
+    <!-- 2. 형식
+    <style>
+        @media screen {
+            html {
+                height: 100%;
+                background-color: black;
+            }
+
+            body {
+                color: whitesmoke;
+                font-family: serif;
+            }
+        }
+
+        @media print {
+            h1 {
+                text-align: center;
+                color: red;
+                font-family: sans-serif;
+            }
+        }
+    </style>
+     -->
+     <!-- 3. 형식 -->
+     <style>
+         @import url(desktop.css) screen;
+         @import url(print.css) print;
+     </style>
+</head>
+
+<body>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sint, nam exercitationem velit tenetur ut
+        quas eos veritatis expedita nulla a quibusdam ipsam qui debitis? Perferendis qui maiores voluptate neque!</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur ullam, expedita mollitia blanditiis sunt quos
+        deleniti, nihil repudiandae sit quasi sapiente, culpa asperiores. Quae eaque magnam sed nemo nobis aliquid?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus amet, harum laborum nam aspernatur in quidem
+        maiores ullam dolores, inventore eveniet nulla hic. Reprehenderit expedita eaque natus pariatur numquam nulla.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur a qui quisquam nemo. Nobis saepe tenetur
+        mollitia pariatur eius ab esse, dolorem vero reprehenderit. Pariatur dicta aut quibusdam nisi saepe.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur ullam, expedita mollitia blanditiis sunt quos
+        deleniti, nihil repudiandae sit quasi sapiente, culpa asperiores. Quae eaque magnam sed nemo nobis aliquid?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus amet, harum laborum nam aspernatur in quidem
+        maiores ullam dolores, inventore eveniet nulla hic. Reprehenderit expedita eaque natus pariatur numquam nulla.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur a qui quisquam nemo. Nobis saepe tenetur
+        mollitia pariatur eius ab esse, dolorem vero reprehenderit. Pariatur dicta aut quibusdam nisi saepe. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Vero, recusandae suscipit. Qui consequuntur dolores vitae pariatur
+        voluptatibus fugiat, iste harum nihil laboriosam voluptatum asperiores amet! Voluptatum nobis consequuntur
+        veritatis accusantium!</p>
+</body>
+
+</html>
+
+<!-- 
+    @media 규칙
+        : 다양한 장치에서 html문서가 적절한 형태를 갖추게 만들어주는 규칙
+
+ -->

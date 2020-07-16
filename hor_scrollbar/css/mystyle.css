@@ -1,0 +1,351 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    outline: 0;
+    text-decoration: none;
+    color: #555555;
+}
+
+img {
+    border: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #dddddd;
+    font-family: 'Poiret One', cursive;
+
+    width: 100%;
+    /* height: 4000px; */
+    min-width: 1400px;
+}
+
+
+/* logo */
+#logo {
+    position: fixed;
+    z-index: 100;
+    top: 20px;
+    right: 20px;
+}
+
+#logo > img {
+    box-shadow: 5px 5px 3px #888;
+}
+
+
+/* sns */
+#sns {
+    position: fixed;
+    z-index: 100;
+    top: 30px;
+    left: 60px;
+
+    display: flex;
+}
+
+#sns > li {
+    margin-right: 30px;
+}
+
+#sns > li i{
+    font-size: 24px;
+    color: #ffffff;
+
+    transition: all 0.5s;
+}
+
+#sns > li:hover i {
+    transform: scale(1.5);
+    color: #888;
+}
+
+/* menu */
+#menu {
+    position: fixed;
+    z-index: 100;
+    top: 50%;
+    transform: translateY(-280px);
+    left: 60px;
+
+    display: flex;
+}
+
+#menu > li {
+    margin-right: 30px;
+}
+
+#menu > li a {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+
+    transition: all 0.5s;
+}
+
+#menu > li:hover a {
+    color: #888;
+}
+
+#menu > li.on > a {
+    color: #888;
+}
+
+/* text 슬로건 */
+#txt1 {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    margin-top: -50px;
+
+    font-style: normal;
+    font-size: 100px;
+    font-weight: 400;
+    line-height: 50px;
+    color: #aaaaaa;
+}
+
+#txt1 span {
+    color: #fff;
+}
+
+#txt2 {
+    position: fixed;
+    top: 55%;
+    transform: translateY(-55%);
+    right: 20px;
+    margin-top: -20px;
+
+    letter-spacing: 1px;
+    font-family: arial;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 9px;
+    color: #888888;
+}
+
+
+/* 갤러리 박스 */
+section {
+    position: fixed;
+    /* height: 100vh; */
+    top: 50%;
+    transform: translateY(-50%);
+    /* width: 4600px; */ /* JQuery에서 추가 */
+    height: 500px;
+
+    /* background-color: lightcyan; */
+
+    display: flex;
+
+    align-items: center;
+}
+
+/* flex 사용 */
+section > article {
+    position: relative;
+
+    width: 180px;
+    flex: 0 0 180px;
+    height: 400px;
+    margin: 10px;
+
+    box-sizing: border-box;
+    box-shadow: 3px 3px 3px #bbbbbb;
+    background-color: #FFF;
+    border-radius: 5px;
+    
+    overflow: hidden;
+    transition: all 0.5s;
+
+    /* border: 1px solid red; */
+}
+/* section > article {
+    position: relative;
+    width: 180px;
+    height: 400px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 10px;
+    
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    float: left;
+
+    border: 1px solid red;
+} */
+
+section > article > h2 {
+    position: absolute;
+    z-index: 20;
+    top: 300px;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
+
+    background-color: #111111;
+    box-sizing: border-box;
+    opacity: 0.4;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+section > article:hover > h2 {
+    opacity: 0.8;
+}
+
+section > article > h2 > a {
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 700;
+    /* line-height: 49px; */
+    line-height: 3.5;
+    letter-spacing: 2px;
+}
+
+section > article > strong {
+    position: absolute;
+    display: block;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 300px;
+    
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    text-align: center;
+    overflow: hidden;
+    opacity: 0.4;
+    transition: all 0.5s;
+    
+    /* border: 1px solid red; */
+}
+
+section > article:hover > strong {
+    opacity: 1;
+}
+
+article > strong > img {
+    height: 300px;
+    width: auto;
+}
+
+section > article > p {
+    position: absolute;
+    z-index: 15;
+    top: 50%;
+    right: 0;
+    width: 100%;
+    height: 0;
+    margin-top: 0px;
+
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #FFFFFF;
+    opacity: 0;   /* 0 */
+
+    /* border: 1px solid red; */
+}
+
+section > article > p > img {
+    width: auto;
+    height: 100%;
+}
+
+section > article > em {
+    position: absolute;
+    display: inline-block;
+    z-index: 20;
+    bottom: 50px;
+    right: -300px;
+
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    background-color: #000000;
+    color: #FFFFFF;
+
+    box-sizing: border-box;
+    opacity: 0.8;
+}
+
+section > article > span {
+    position: absolute;
+    z-index: 30;
+    top: 110px;
+    right: -300px;
+
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+
+/* copyright */
+#cop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    font-family: arial;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #999999;
+    letter-spacing: 4px;
+}
+
+
+/* 클릭 시 변경 될 스타일 설정 */
+article.on {
+    flex: 0 0 780px;
+    height: 500px;
+    margin: 10px;
+}
+
+article.on > h2 {
+    top: 100px;
+    height: 100px;
+    background-color: #111111;
+    opacity: 0.3;
+}
+
+
+article.on > h2 > a {
+    font-size: 30px;
+}
+
+article.on > strong {
+    right: -1000px;
+    opacity: 0;
+}
+
+
+article.on > p {
+    height: 500px;
+    margin-top: -250px;
+    opacity: 1;
+}
+
+article.on > em {
+    right: 20px;
+    padding: 10px 20px;
+}
+
+article.on > span {
+    right: 20px;
+    cursor: pointer;
+}

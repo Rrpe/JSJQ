@@ -12,7 +12,7 @@ $(function () {
 
     $('section').height(ht);
 
-    // 윈도우 리사이즈 발생시
+    // 윈도우 리사이즈 발생시 (페이지 크기 변경 시)
     // 크기 조절 시 자동으로 맞춰줌
     $(window).on('resize', function () {
         console.log('resize..');
@@ -35,11 +35,11 @@ $(function () {
         var index = $(this).index();
         var top = index * ht;
 
-        $('html, body').stop().animate({
+        /* $('html, body').stop().animate({
             "scrollTop": top
-        }, 1400);
+        }, 1400); */
 
-        /* var sec_ht = [];
+        var sec_ht = [];
         $('#wrap > section').each(function (index) {
             // console.log('section index: ' + index);
 
@@ -49,7 +49,7 @@ $(function () {
 
         $('html, body').stop().animate({
             "scrollTop": sec_ht[index]
-        }, 1400); */
+        }, 1400);
 
 
 
@@ -69,11 +69,6 @@ $(function () {
         $(this).addClass('on'); */
     });
 
-    /* $('.menu li').on('click', function () {
-        $('.menu li').removeClass('on');
-        $(this).addClass('on');
-    }); */
-
     var sec_ht = [];
     $('#wrap > section').each(function (index) {
 
@@ -86,6 +81,7 @@ $(function () {
 
         var win_scroll = $(window).scrollTop();
 
+        // 좌측 메뉴바 각 레이아웃 범위 변경 시 마다 글자 크기 확대
         for (var i = 0; i < 4; i++) {
             // if (win_scroll >= ht*i && win_scroll < ht*(i+1)) {
             if (win_scroll >= sec_ht[i] && win_scroll < sec_ht[i + 1]) {
@@ -98,6 +94,7 @@ $(function () {
         }
         
         /* 
+        // 사용하기 어려운 방식
         // 마지막 section 높이 구함
         var test2 = $("#wrap section:last-child").height();
 
@@ -111,6 +108,7 @@ $(function () {
         */
 
         /*  
+        // 쌩 노가다 방식
         if (win_scroll >= sec_ht[0] && win_scroll < sec_ht[1]) {
              $('.menu li').removeClass('on');
              // $('.menu li:nth-child(1)').addClass('on');
@@ -135,29 +133,42 @@ $(function () {
          */
 
         // jquery.mousewheel.min.js 필요
-        /* $("section").on("mousewheel", function (event, delta) {
+        // Mouse Wheel Event
+        // .eq(index), .prev(): 이전 index 배열, .next(): 다음 index 배열
+        $("section").on('mousewheel', function(event, delta) {
+            // var i = $(this).index();
+            // console.log("mouse wheel index: " + i);
+            // var prev_index = $(this).prev().index();
+            // var next_index = $(this).next().index();
+            // var curr_index = $(this).index();
 
-            //마우스 휠을 올렸을때	
-            if (delta > 0) {
-                //변수 prev에 현재 휠을 움직인 section에서 이전 section의 offset().top위치 저장
-                var prev = $(this).prev().offset().top;
-                //문서 전체를 prev에 저장된 위치로 이동
-                $("html,body").stop().animate({
-                    "scrollTop": prev
-                }, 1400, "easeOutBounce");
+            var curr_index = $(this).index();
+            var len = $("section").length;
+            if (delta < 0) {
+                // 마우스 휠 내릴때 -1
+                var down = $(this).next().offset().top;
+                console.log("down: " + down);
 
-                //마우스 휠을 내렸을때	 
-            } else if (delta < 0) {
-                //변수 next에 현재 휠을 움직인 section에서 다음 section의 offset().top위치 저장
-                var next = $(this).next().offset().top;
-                //문서 전체를 next에 저장된 위치로 이동
-                $("html,body").stop().animate({
-                    "scrollTop": next
-                }, 1400, "easeOutBounce");
+                if (curr_index < len-1) {
+
+                    $("html, body").stop().animate({
+                        "scrollTop": down
+                    }, 1400, "easeOutBounce");
+                }
+
+            } else if (delta > 0) {
+                // 마우스 휠 올릴때 +1
+                var up = $(this).prev().offset().top;
+                console.log("up: " + up);
+
+                if (curr_index > 0) {
+                    $("html, body").stop().animate({
+                        "scrollTop": up
+                    }, 1400, "easeOutBounce");
+                }
             }
+        });
 
-        }); */
-        clear();
     });
 
 });
