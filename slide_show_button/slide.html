@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Layout</title>
+
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .slideshow {
+            position: relative;
+            width: 300px;
+            height: 100px;
+            margin: 0 auto;
+            background-color: lightblue;
+            /* overflow: hidden; */
+        }
+
+        .con {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 300px;
+            height: 100px;
+            background-color: lavender;
+        }
+
+        .slide {
+            position: absolute;
+            width: 300px;
+            height: 100px;
+            border: 1px solid red;
+        }
+
+        .slide:nth-child(1) {
+            left: 0%;
+        }
+        .slide:nth-child(2) {
+            left: 100%;
+        }
+        .slide:nth-child(3) {
+            left: 200%;
+        }
+        .slide:nth-child(4) {
+            left: 300%;
+        }
+        .slide:nth-child(5) {
+            left: 400%;
+        }
+
+        .html {
+            width: 400px;
+            height: 400px;
+            background-color: aquamarine;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .html a {
+            padding: 10px;
+        }
+    </style>
+
+    <script>
+        $(function(){
+            console.log("연결");
+
+           /*  var txt = $(".text").text();
+            var html = $(".html").html();
+
+            console.log("==== before ====")
+            console.log("text: " + txt);
+            console.log("html: " + html);
+
+            $(".text").text("길순이");
+            $(".html").html("길동이");
+
+            txt = $(".text").text();
+            html = $(".html").html();
+
+            console.log("==== after ====");
+            console.log("text: " + txt);
+            console.log("html: " + html); */
+            
+            var a = "";
+            for(var i = 0; i < 5; i++) {
+                a += '<a href="#">' + i + "</a>";
+            }
+
+            console.log(a);
+
+            $(".html").html(a);
+        });
+    </script>
+</head>
+<div class="text">text</div>
+<div class="html">html</div>
+<hr>
+<body>
+    <div class="slideshow">
+        <div class="con">
+            <div class="slide">1</div>
+            <div class="slide">2</div>
+            <div class="slide">3</div>
+            <div class="slide">4</div>
+            <div class="slide">5</div>
+        </div>
+    </div>
+</body>
+
+</html>
