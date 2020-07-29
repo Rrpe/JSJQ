@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>외부 파일로 표 작성 - 기본형 | jQuery book demos</title>
+<link rel="stylesheet" type="text/css" href="styles.css" />
+<script src="jquery-3.1.1.min.js"></script>
+<!-- <script src="scripts.js"></script> -->
+<script>
+	$(function(){
+		var tbody = $("#tbody");
+
+		// json 데이터 읽어오기
+		$.getJSON("./data.json", function(data){
+			// console.log(data);
+
+			$.each(data, function(index, item){
+				// console.log(index, item);
+				/* 
+				var tr = $('<tr />')
+				var no = $('<td />').text(item.no);
+				var name = $('<td />').text(item.name);
+				var mail = $('<td />').text(item.mail);
+
+				// A.append(B) : A 안에 B 추가
+				tr.append(no);
+				tr.append(name);
+				tr.append(mail);
+
+				tbody.append(tr);
+ 				*/
+
+				var str_tr = "<tr><td>"+item.no+"</td><td>"+item.name+"</td><td>"+item.mail+"</td></tr>";
+
+				tbody.append($(str_tr));
+			});
+		});
+
+	});
+</script>
+</head>
+<body>
+	<h1>Ajax table</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>No.</th>
+				<th>Name</th>
+				<th>Mail</th>
+			</tr>
+		</thead>
+		<tbody id="tbody"></tbody>
+	</table>
+
+	
+</body>
+</html>

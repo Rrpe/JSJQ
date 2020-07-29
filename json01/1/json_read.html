@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON 읽어오기</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        $(function () {
+            /* 
+            // 변수
+            var a = 100;
+
+            // 배열 : arr[0], arr[1], arr[2]
+            var arr = [100, 200, 300];
+
+            // 객체 : obj.a, obj.b, obj.c
+            var obj = {a:10, b:20, c:30};
+
+            // 객체 배열 : obj_arr[0].a, obj_arr[0].b, obj_arr[0].c, obj_arr[1].a, obj_arr[1].b, obj_arr[1].c, obj_arr[2].a, obj_arr[2].b, obj_arr[2].c
+            var obj_arr = [{a:10, b:20, c:30}, {a:100, b:200, c:300}, {a:1000, b:2000, c:3000}];
+            console.log(obj_arr[0].a, obj_arr[0].b, obj_arr[0].c, obj_arr[1].a, obj_arr[1].b, obj_arr[1].c, obj_arr[2].a, obj_arr[2].b, obj_arr[2].c);
+            */
+
+            // jQuery에서 JSON파일 읽어오는 메소드
+            // $.getJSON('url', function(가져온 데이터의 기억장소 변수명))
+            $.getJSON("./mydata.json", function (people) {
+                // 객체 배열 people
+                // console.log("json 데이터 읽기: " + people);     
+
+                // 1. $('태그요소').each();
+                // index : 객체 번호, item : 객체 내용
+                $.each(people, function (index, item) {
+                    // console.log(index, item);
+                    if (item.name == '동순이') {
+
+                        console.log(index);
+                        console.log(item.no);
+                        console.log(item.name);
+                        console.log(item.addr);
+                    }
+                });
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
